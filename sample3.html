@@ -80,9 +80,10 @@
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/common.js"></script>
 
         <!--OpenCv-->
-        <script async="" src="js/opencv.js" type="text/Javascript" onload="onOpenCvReady();" onload="onOpenCvReady();"></script>
+        <script async="" src="js/opencv.js" type="text/Javascript" onload="onOpenCvReady();" onload="onOpenCvError();"></script>
         
         <script type="text/javascript">
             let imgElement = document.getElementById('imgSrc');
@@ -121,7 +122,7 @@
                     $("#step3_o"+filter).show(); 
                 });
                 $("#value").change(function(){
-                    $("#value").html($(this).val());
+                    $("value_sel").html($(this).val());
                     process();
                 })
 
