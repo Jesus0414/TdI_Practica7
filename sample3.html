@@ -52,6 +52,7 @@
                         <option value="1">Threshold</option>
                         <option value="2">Gaussian blur</option>
                         <option value="3">Canny</option>
+                        <option value="4">Equalize Histogram</option>
                     </select>
                     <br>
 
@@ -135,6 +136,10 @@
                     let value2 = parseInt($("#value_o3_2").val());
                     let valApertura = parseInt($("#value_o3").val());
                     cv.Canny(mat, mat_result, value1, value2, valApertura);
+                break;}
+                case 4:{
+                    cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
+                    cv.equalizeHist(mat, mat_result);
                 break;}
             };
             cv.imshow('canvasOutput', mat_result);
