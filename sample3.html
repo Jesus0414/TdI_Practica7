@@ -53,6 +53,7 @@
                         <option value="2">Gaussian blur</option>
                         <option value="3">Canny</option>
                         <option value="4">Equalize Histogram</option>
+                        <option value="5">BN Filter</option>
                     </select>
                     <br>
 
@@ -140,6 +141,11 @@
                 case 4:{
                     cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
                     cv.equalizeHist(mat, mat_result);
+                break;}
+                case 5:{
+                    cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
+                    cv.imshow('canvasOutput', mat);
+                    mat.delete();
                 break;}
             };
             cv.imshow('canvasOutput', mat_result);
